@@ -19,7 +19,7 @@
       android:layout_marginBottom="40dp"
       android:fontFamily="@font/inter_extrabold"
       android:gravity="center"
-      android:text="Pengajuan Perjalanan Dinas"
+      android:text="Pengajuan Kendaraan Dinas"
       android:textColor="@color/dark_green"
       android:textSize="24sp"
       android:textStyle="bold" />
@@ -35,22 +35,29 @@
       <com.google.android.material.textfield.TextInputLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
-        android:hint="Tujuan Dinas">
+        android:layout_marginTop="12dp"
+        android:hint="Input No. Telephone"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
 
-        <com.google.android.material.textfield.TextInputEditText
-          android:id="@+id/etNamaForm"
+        <TextView
+          android:id="@+id/textView2"
           android:layout_width="match_parent"
           android:layout_height="wrap_content"
-          android:alpha="140"
-          android:fontFamily="@font/inter" />
+          android:fontFamily="@font/inter_extrabold"
+          android:text="Jenis Kendaraan" />
+
+        <Spinner
+          android:id="@+id/spinner"
+          android:layout_width="match_parent"
+          android:layout_height="48dp" />
       </com.google.android.material.textfield.TextInputLayout>
+
 
       <com.google.android.material.textfield.TextInputLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="12dp"
-        android:hint="Tanggal keberangkatan">
+        android:hint="Tujuan keberangkatan">
 
         <com.google.android.material.textfield.TextInputEditText
           android:id="@+id/etEmailForm"
@@ -64,7 +71,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="12dp"
-        android:hint="Tanggal kembali">
+        android:hint="Tanggal">
 
         <com.google.android.material.textfield.TextInputEditText
           android:id="@+id/etKepulangan"
@@ -108,7 +115,7 @@
 
         <Space
           android:layout_width="12dp"
-          android:layout_height="1dp" />
+          android:layout_height="match_parent" />
 
         <com.google.android.material.button.MaterialButton
           android:id="@+id/btnGoRegister"

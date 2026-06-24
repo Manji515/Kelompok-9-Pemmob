@@ -19,7 +19,7 @@
       android:layout_marginBottom="40dp"
       android:fontFamily="@font/inter_extrabold"
       android:gravity="center"
-      android:text="Pengajuan Perjalanan Dinas"
+      android:text="Penomeran Dokumen"
       android:textColor="@color/dark_green"
       android:textSize="24sp"
       android:textStyle="bold" />
@@ -36,7 +36,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
-        android:hint="Tujuan Dinas">
+        android:hint="Judul">
 
         <com.google.android.material.textfield.TextInputEditText
           android:id="@+id/etNamaForm"
@@ -50,7 +50,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="12dp"
-        android:hint="Tanggal keberangkatan">
+        android:hint="Tanggal">
 
         <com.google.android.material.textfield.TextInputEditText
           android:id="@+id/etEmailForm"
@@ -64,7 +64,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="12dp"
-        android:hint="Tanggal kembali">
+        android:hint="Jenis Dokumen">
 
         <com.google.android.material.textfield.TextInputEditText
           android:id="@+id/etKepulangan"
@@ -78,7 +78,7 @@
         android:layout_width="match_parent"
         android:layout_height="200dp"
         android:layout_marginTop="12dp"
-        android:hint="Agenda">
+        android:hint="Perihal">
         <com.google.android.material.textfield.TextInputEditText
           android:id="@+id/etPhoneForm"
           android:layout_width="match_parent"
@@ -124,7 +124,6 @@
           app:strokeWidth="2dp" />
 
       </LinearLayout>
-
     </LinearLayout>
   </LinearLayout>
 </ScrollView>

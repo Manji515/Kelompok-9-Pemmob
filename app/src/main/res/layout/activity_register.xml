@@ -18,7 +18,7 @@
       android:layout_marginBottom="40dp"
       android:fontFamily="@font/inter_extrabold"
       android:gravity="center"
-      android:text="REGISTER"
+      android:text="REGISTRASI"
       android:textColor="@color/dark_green"
       android:textSize="24sp"
       android:textStyle="bold" />
@@ -89,26 +89,51 @@
           android:id="@+id/textView2"
           android:layout_width="match_parent"
           android:layout_height="wrap_content"
+          android:fontFamily="@font/inter"
           android:text="Role" />
 
         <Spinner
           android:id="@+id/spinner"
           android:layout_width="match_parent"
-          android:layout_height="36dp" />
+          android:layout_height="48dp" />
       </com.google.android.material.textfield.TextInputLayout>
-
-      <com.google.android.material.button.MaterialButton
-        android:id="@+id/btnRegisterSubmit"
+      <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="52dp"
-        android:layout_marginTop="32dp"
-        android:layout_marginBottom="16dp"
-        android:backgroundTint="@color/dark_green"
-        android:fontFamily="@font/inter_semibold"
-        android:text="Register"
-        android:textAllCaps="false"
-        android:textColor="@android:color/white"
-        app:cornerRadius="16dp" />
+        android:layout_height="wrap_content"
+        android:layout_marginTop="36dp"
+        android:layout_marginBottom="24dp"
+        android:orientation="horizontal">
+
+        <com.google.android.material.button.MaterialButton
+          android:id="@+id/btnLogin"
+          android:layout_width="0dp"
+          android:layout_height="52dp"
+          android:layout_weight="1"
+          android:backgroundTint="@color/dark_green"
+          android:fontFamily="@font/inter_semibold"
+          android:text="Kirim"
+          android:textAllCaps="false"
+          android:textColor="@color/white"
+          app:cornerRadius="16dp" />
+
+        <Space
+          android:layout_width="12dp"
+          android:layout_height="match_parent" />
+
+        <com.google.android.material.button.MaterialButton
+          android:id="@+id/btnGoRegister"
+          android:layout_width="0dp"
+          android:layout_height="52dp"
+          android:layout_weight="1"
+          android:backgroundTint="@color/powder_blue"
+          android:text="Batal"
+          android:textColor="@color/dark_green"
+          android:fontFamily="@font/inter_semibold"
+          app:cornerRadius="16dp"
+          app:strokeColor="@color/dark_green"
+          app:strokeWidth="2dp" />
+
+      </LinearLayout>
 
     </LinearLayout>
   </LinearLayout>
