@@ -60,7 +60,7 @@
         android:hint="Tujuan keberangkatan">
 
         <com.google.android.material.textfield.TextInputEditText
-          android:id="@+id/etEmailForm"
+          android:id="@+id/txtKeberangkatan"
           android:layout_width="match_parent"
           android:layout_height="wrap_content"
           android:alpha="140"
@@ -74,7 +74,7 @@
         android:hint="Tanggal">
 
         <com.google.android.material.textfield.TextInputEditText
-          android:id="@+id/etKepulangan"
+          android:id="@+id/txtKembali"
           android:layout_width="match_parent"
           android:layout_height="wrap_content"
           android:alpha="140"
@@ -87,7 +87,7 @@
         android:layout_marginTop="12dp"
         android:hint="Agenda">
         <com.google.android.material.textfield.TextInputEditText
-          android:id="@+id/etPhoneForm"
+          android:id="@+id/txtAgenda"
           android:layout_width="match_parent"
           android:layout_height="wrap_content"
           android:alpha="140"
@@ -102,7 +102,7 @@
         android:orientation="horizontal">
 
         <com.google.android.material.button.MaterialButton
-          android:id="@+id/btnLogin"
+          android:id="@+id/btnPenomeranDokumen"
           android:layout_width="0dp"
           android:layout_height="52dp"
           android:layout_weight="1"
@@ -118,7 +118,7 @@
           android:layout_height="match_parent" />
 
         <com.google.android.material.button.MaterialButton
-          android:id="@+id/btnGoRegister"
+          android:id="@+id/btnPengajuanPerjalananDinas"
           android:layout_width="0dp"
           android:layout_height="52dp"
           android:layout_weight="1"

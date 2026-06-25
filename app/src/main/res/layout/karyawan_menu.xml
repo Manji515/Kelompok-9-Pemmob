@@ -39,7 +39,7 @@
         android:orientation="horizontal">
 
         <com.google.android.material.button.MaterialButton
-          android:id="@+id/btnGoRegister"
+          android:id="@+id/btnPengajuanPerjalananDinas"
           android:layout_width="0dp"
           android:layout_height="108dp"
           android:layout_weight="1"
@@ -55,7 +55,7 @@
           android:layout_height="wrap_content" />
 
         <com.google.android.material.button.MaterialButton
-          android:id="@+id/btnLogin"
+          android:id="@+id/btnPenomeranDokumen"
           android:layout_width="0dp"
           android:layout_height="108dp"
           android:layout_weight="1"
@@ -74,7 +74,7 @@
         android:orientation="horizontal">
 
         <com.google.android.material.button.MaterialButton
-          android:id="@+id/btnTombol3"
+          android:id="@+id/btnLogistikBarang"
           android:layout_width="0dp"
           android:layout_height="match_parent"
           android:layout_weight="1"
@@ -90,7 +90,7 @@
           android:layout_height="1dp" />
 
         <com.google.android.material.button.MaterialButton
-          android:id="@+id/btnTombol4"
+          android:id="@+id/btnPengajuanKendaraanDinas"
           android:layout_width="0dp"
           android:layout_height="108dp"
           android:layout_weight="1"
@@ -102,6 +102,34 @@
           app:cornerRadius="16dp" />
 
       </LinearLayout>
+
+      <TextView
+        android:id="@+id/textView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/inter_extrabold"
+        android:text="Daftar Pengajuan" />
+      <TextView
+        android:id="@+id/tvKosong"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:gravity="center"
+        android:text="Belum ada pengajuan"
+        android:textColor="#AAAAAA"
+        android:fontFamily="@font/inter"
+        android:textSize="13sp"
+        android:visibility="visible"/>
+
+      <!-- Daftar pengajuan -->
+      <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvDaftarPengajuan"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:nestedScrollingEnabled="false"
+        android:visibility="gone"/>
+
 
     </LinearLayout>
   </LinearLayout>

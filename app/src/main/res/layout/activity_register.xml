@@ -105,7 +105,7 @@
         android:orientation="horizontal">
 
         <com.google.android.material.button.MaterialButton
-          android:id="@+id/btnLogin"
+          android:id="@+id/btnPenomeranDokumen"
           android:layout_width="0dp"
           android:layout_height="52dp"
           android:layout_weight="1"
@@ -121,7 +121,7 @@
           android:layout_height="match_parent" />
 
         <com.google.android.material.button.MaterialButton
-          android:id="@+id/btnGoRegister"
+          android:id="@+id/btnPengajuanPerjalananDinas"
           android:layout_width="0dp"
           android:layout_height="52dp"
           android:layout_weight="1"
