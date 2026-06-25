@@ -47,7 +47,7 @@
           android:text="Jenis Kendaraan" />
 
         <Spinner
-          android:id="@+id/spinner"
+          android:id="@+id/spnKendaraan"
           android:layout_width="match_parent"
           android:layout_height="48dp" />
       </com.google.android.material.textfield.TextInputLayout>
@@ -60,7 +60,7 @@
         android:hint="Tujuan keberangkatan">
 
         <com.google.android.material.textfield.TextInputEditText
-          android:id="@+id/txtKeberangkatan"
+          android:id="@+id/txtTanggal"
           android:layout_width="match_parent"
           android:layout_height="wrap_content"
           android:alpha="140"
@@ -71,10 +71,10 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="12dp"
-        android:hint="Tanggal">
+        android:hint="Tanggal Keberangkatan">
 
         <com.google.android.material.textfield.TextInputEditText
-          android:id="@+id/txtKembali"
+          android:id="@+id/txtJenis"
           android:layout_width="match_parent"
           android:layout_height="wrap_content"
           android:alpha="140"
@@ -83,11 +83,12 @@
 
       <com.google.android.material.textfield.TextInputLayout
         android:layout_width="match_parent"
-        android:layout_height="200dp"
+        android:layout_height="wrap_content"
         android:layout_marginTop="12dp"
         android:hint="Agenda">
+
         <com.google.android.material.textfield.TextInputEditText
-          android:id="@+id/txtAgenda"
+          android:id="@+id/txtPerihal"
           android:layout_width="match_parent"
           android:layout_height="wrap_content"
           android:alpha="140"
@@ -102,7 +103,7 @@
         android:orientation="horizontal">
 
         <com.google.android.material.button.MaterialButton
-          android:id="@+id/btnPenomeranDokumen"
+          android:id="@+id/btnKirim"
           android:layout_width="0dp"
           android:layout_height="52dp"
           android:layout_weight="1"
@@ -118,12 +119,12 @@
           android:layout_height="match_parent" />
 
         <com.google.android.material.button.MaterialButton
-          android:id="@+id/btnPengajuanPerjalananDinas"
+          android:id="@+id/btnKembali"
           android:layout_width="0dp"
           android:layout_height="52dp"
           android:layout_weight="1"
           android:backgroundTint="@color/powder_blue"
-          android:text="Batal"
+          android:text="Kembali"
           android:textColor="@color/dark_green"
           android:fontFamily="@font/inter_semibold"
           app:cornerRadius="16dp"

@@ -39,7 +39,7 @@
         android:hint="Tujuan Dinas">
 
         <com.google.android.material.textfield.TextInputEditText
-          android:id="@+id/txtTujuanDinas"
+          android:id="@+id/txtJudul"
           android:layout_width="match_parent"
           android:layout_height="wrap_content"
           android:alpha="140"
@@ -53,7 +53,7 @@
         android:hint="Tanggal keberangkatan">
 
         <com.google.android.material.textfield.TextInputEditText
-          android:id="@+id/txtKeberangkatan"
+          android:id="@+id/txtTanggal"
           android:layout_width="match_parent"
           android:layout_height="wrap_content"
           android:alpha="140"
@@ -67,7 +67,7 @@
         android:hint="Tanggal kembali">
 
         <com.google.android.material.textfield.TextInputEditText
-          android:id="@+id/txtKembali"
+          android:id="@+id/txtJenis"
           android:layout_width="match_parent"
           android:layout_height="wrap_content"
           android:alpha="140"
@@ -76,11 +76,11 @@
 
       <com.google.android.material.textfield.TextInputLayout
         android:layout_width="match_parent"
-        android:layout_height="200dp"
+        android:layout_height="wrap_content"
         android:layout_marginTop="12dp"
         android:hint="Agenda">
         <com.google.android.material.textfield.TextInputEditText
-          android:id="@+id/txtAgenda"
+          android:id="@+id/txtPerihal"
           android:layout_width="match_parent"
           android:layout_height="wrap_content"
           android:alpha="140"
@@ -95,7 +95,7 @@
         android:orientation="horizontal">
 
         <com.google.android.material.button.MaterialButton
-          android:id="@+id/btnPenomeranDokumen"
+          android:id="@+id/btnKirim"
           android:layout_width="0dp"
           android:layout_height="52dp"
           android:layout_weight="1"
@@ -111,7 +111,7 @@
           android:layout_height="1dp" />
 
         <com.google.android.material.button.MaterialButton
-          android:id="@+id/btnPengajuanPerjalananDinas"
+          android:id="@+id/btnKembali"
           android:layout_width="0dp"
           android:layout_height="52dp"
           android:layout_weight="1"

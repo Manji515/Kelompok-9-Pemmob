@@ -71,7 +71,7 @@
         android:orientation="horizontal">
 
         <com.google.android.material.button.MaterialButton
-          android:id="@+id/btnPengajuanPerjalananDinas"
+          android:id="@+id/btnKembali"
           android:layout_width="0dp"
           android:layout_height="52dp"
           android:layout_weight="1"
@@ -88,7 +88,7 @@
           android:layout_height="1dp" />
 
         <com.google.android.material.button.MaterialButton
-          android:id="@+id/btnPenomeranDokumen"
+          android:id="@+id/btnKirim"
           android:layout_width="0dp"
           android:layout_height="52dp"
           android:layout_weight="1"

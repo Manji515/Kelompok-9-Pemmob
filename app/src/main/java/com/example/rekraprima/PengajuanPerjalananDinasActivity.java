@@ -19,17 +19,17 @@ public class PengajuanPerjalananDinasActivity extends AppCompatActivity {
         setContentView(R.layout.karyawan_pengajuan_perjalanan_dinas);
 
         // Sambungkan view — sesuaikan ID dengan yang ada di XML kamu
-        txtTujuan        = findViewById(R.id.txtTujuanDinas);
-        txtKeberangkatan = findViewById(R.id.txtKeberangkatan);
-        txtKembali       = findViewById(R.id.txtKembali);
-        txtAgenda        = findViewById(R.id.txtAgenda);
+        txtTujuan        = findViewById(R.id.txtJudul);
+        txtKeberangkatan = findViewById(R.id.txtTanggal);
+        txtKembali       = findViewById(R.id.txtJenis);
+        txtAgenda        = findViewById(R.id.txtPerihal);
 
         // PERHATIAN: di XML kamu ID tombol Kirim = btnPenomeranDokumen
         //            dan Kembali = btnPengajuanPerjalananDinas.
         //            Sebaiknya ganti ID-nya di XML menjadi btnKirim & btnKembali
         //            agar tidak membingungkan. Tapi kalau belum sempat, pakai ID lama:
-        btnKirim   = findViewById(R.id.btnPenomeranDokumen);   // ganti jadi btnPenomeranDokumen kalau belum ubah XML
-        btnKembali = findViewById(R.id.btnPengajuanPerjalananDinas); // ganti jadi btnPengajuanPerjalananDinas kalau belum ubah XML
+        btnKirim   = findViewById(R.id.btnKirim);   // ganti jadi btnPenomeranDokumen kalau belum ubah XML
+        btnKembali = findViewById(R.id.btnKembali); // ganti jadi btnPengajuanPerjalananDinas kalau belum ubah XML
 
         // Cek apakah dibuka dalam mode baca (dari daftar pengajuan)
         boolean readOnly = getIntent().getBooleanExtra("MODE_READ_ONLY", false);

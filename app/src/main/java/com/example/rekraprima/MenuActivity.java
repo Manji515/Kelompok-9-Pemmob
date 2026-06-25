@@ -31,12 +31,18 @@ public class MenuActivity extends AppCompatActivity {
             Intent intent = new Intent(this, PengajuanPerjalananDinasActivity.class);
             startActivity(intent);
         });
-
-        // Tombol lain bisa diarahkan ke activity masing-masing nanti
-        btnPenomeran.setOnClickListener(v -> { /* TODO */ });
-        btnLogistik .setOnClickListener(v -> { /* TODO */ });
-        btnKendaraan.setOnClickListener(v -> { /* TODO */ });
-
+        btnKendaraan.setOnClickListener(v -> {
+            Intent intent = new Intent(this, PengajuanKendaraanDinasActivity.class);
+            startActivity(intent);
+        });
+        btnLogistik.setOnClickListener(v -> {
+            Intent intent = new Intent(this, LogistikBarangActivity.class);
+            startActivity(intent);
+        });
+        btnPenomeran.setOnClickListener(v -> {
+            Intent intent = new Intent(this, PenomeranDokumenActivity.class);
+            startActivity(intent);
+        });
         // RecyclerView daftar pengajuan
         recyclerView = findViewById(R.id.rvDaftarPengajuan);
         tvKosong     = findViewById(R.id.tvKosong);

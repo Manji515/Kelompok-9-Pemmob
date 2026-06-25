@@ -93,7 +93,7 @@
           android:text="Role" />
 
         <Spinner
-          android:id="@+id/spinner"
+          android:id="@+id/spnKendaraan"
           android:layout_width="match_parent"
           android:layout_height="48dp" />
       </com.google.android.material.textfield.TextInputLayout>
@@ -105,7 +105,7 @@
         android:orientation="horizontal">
 
         <com.google.android.material.button.MaterialButton
-          android:id="@+id/btnPenomeranDokumen"
+          android:id="@+id/btnKirim"
           android:layout_width="0dp"
           android:layout_height="52dp"
           android:layout_weight="1"
@@ -121,7 +121,7 @@
           android:layout_height="match_parent" />
 
         <com.google.android.material.button.MaterialButton
-          android:id="@+id/btnPengajuanPerjalananDinas"
+          android:id="@+id/btnKembali"
           android:layout_width="0dp"
           android:layout_height="52dp"
           android:layout_weight="1"
