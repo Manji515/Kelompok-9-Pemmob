@@ -23,9 +23,6 @@
 
     <!-- Tambahkan ini -->
     <activity android:name=".PengajuanPerjalananDinasActivity" />
-    <activity android:name=".PengajuanKendaraanDinasActivity" />
-    <activity android:name=".LogistikBarangActivity" />
-    <activity android:name=".PenomeranDokumenActivity" />
 
   </application>
 
