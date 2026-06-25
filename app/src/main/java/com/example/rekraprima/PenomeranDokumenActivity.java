@@ -22,8 +22,8 @@ public class PenomeranDokumenActivity extends AppCompatActivity {
         txtTanggal = findViewById(R.id.txtTanggal);
         txtJenis   = findViewById(R.id.txtJenis);
         txtPerihal = findViewById(R.id.txtPerihal);
-        btnKirim   = findViewById(R.id.btnKirim);
-        btnKembali = findViewById(R.id.btnKembali);
+        btnKirim   = findViewById(R.id.btnDaftar);
+        btnKembali = findViewById(R.id.btnBatal);
 
         boolean readOnly = getIntent().getBooleanExtra("MODE_READ_ONLY", false);
 

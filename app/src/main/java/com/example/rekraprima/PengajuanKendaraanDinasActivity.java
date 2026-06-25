@@ -26,12 +26,12 @@ public class PengajuanKendaraanDinasActivity extends AppCompatActivity {
         setContentView(R.layout.karyawan_pengajuan_kendaraan_dinas);
 
         // Sambungkan view
-        spnKendaraan     = findViewById(R.id.spnKendaraan);
+        spnKendaraan     = findViewById(R.id.spnRole);
         txtKeberangkatan = findViewById(R.id.txtTanggal);
         txtTanggal       = findViewById(R.id.txtJenis);
         txtAgenda        = findViewById(R.id.txtPerihal);
-        btnKirim         = findViewById(R.id.btnKirim);
-        btnKembali       = findViewById(R.id.btnKembali);
+        btnKirim         = findViewById(R.id.btnDaftar);
+        btnKembali       = findViewById(R.id.btnBatal);
 
         // Isi spinner dengan daftar kendaraan
         ArrayAdapter<String> spinnerAdapter = new ArrayAdapter<>(

@@ -14,8 +14,8 @@ class LoginActivity : AppCompatActivity() {
         setContentView(R.layout.activity_login)
         val etNameLogin = findViewById<TextInputEditText>(R.id.etNameLogin)
         val etPasswordLogin = findViewById<TextInputEditText>(R.id.etPasswordLogin)
-        val btnRegisterIntent = findViewById<MaterialButton>(R.id.btnPengajuanPerjalananDinas) // Tombol Register
-        val btnLogin = findViewById<MaterialButton>(R.id.btnPenomeranDokumen) // Tombol Login
+        val btnRegisterIntent = findViewById<MaterialButton>(R.id.btnBatal) // Tombol Register
+        val btnLogin = findViewById<MaterialButton>(R.id.btnDaftar) // Tombol Login
 
         val dbHelper = DatabaseHelper(this)
 
@@ -33,8 +33,8 @@ class LoginActivity : AppCompatActivity() {
 
                     val intent = when (userRole) {
                         "Manajer" -> Intent(this, ManajerMenuActivity::class.java)
-                        "Karyawan" -> Intent(this, KaryawanMenuActivity::class.java)
-                        else -> Intent(this, MenuActivity::class.java) // Pilihan cadangan jika role tidak dikenali
+                        "Karyawan" -> Intent(this, MenuActivity::class.java)
+                        else ->  null
                     }
 
                     startActivity(intent)

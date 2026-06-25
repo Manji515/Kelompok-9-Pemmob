@@ -28,8 +28,8 @@ public class PengajuanPerjalananDinasActivity extends AppCompatActivity {
         //            dan Kembali = btnPengajuanPerjalananDinas.
         //            Sebaiknya ganti ID-nya di XML menjadi btnKirim & btnKembali
         //            agar tidak membingungkan. Tapi kalau belum sempat, pakai ID lama:
-        btnKirim   = findViewById(R.id.btnKirim);   // ganti jadi btnPenomeranDokumen kalau belum ubah XML
-        btnKembali = findViewById(R.id.btnKembali); // ganti jadi btnPengajuanPerjalananDinas kalau belum ubah XML
+        btnKirim   = findViewById(R.id.btnDaftar);   // ganti jadi btnPenomeranDokumen kalau belum ubah XML
+        btnKembali = findViewById(R.id.btnBatal); // ganti jadi btnPengajuanPerjalananDinas kalau belum ubah XML
 
         // Cek apakah dibuka dalam mode baca (dari daftar pengajuan)
         boolean readOnly = getIntent().getBooleanExtra("MODE_READ_ONLY", false);

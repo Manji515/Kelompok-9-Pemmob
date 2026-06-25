@@ -17,10 +17,10 @@ class RegisterActivity : AppCompatActivity() {
         val etName = findViewById<TextInputEditText>(R.id.etNameRegister)
         val etPassword = findViewById<TextInputEditText>(R.id.etPasswordRegister)
         val etConfirmPassword = findViewById<TextInputEditText>(R.id.etConfirmPasswordRegister)
-        val spinnerRole = findViewById<Spinner>(R.id.spinner)
+        val spinnerRole = findViewById<Spinner>(R.id.spnRole)
 
-        val btnKirim = findViewById<MaterialButton>(R.id.btnPenomeranDokumen) // Tombol Kirim
-        val btnBatal = findViewById<MaterialButton>(R.id.btnPengajuanPerjalananDinas) // Tombol Batal
+        val btnKirim = findViewById<MaterialButton>(R.id.btnDaftar) // Tombol Kirim
+        val btnBatal = findViewById<MaterialButton>(R.id.btnBatal) // Tombol Batal
 
         val dbHelper = DatabaseHelper(this)
 

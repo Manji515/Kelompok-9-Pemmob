@@ -13,7 +13,7 @@
     android:theme="@style/Theme.Rekraprima">
 
     <activity
-      android:name=".MenuActivity"
+      android:name=".LoginActivity"
       android:exported="true">
       <intent-filter>
         <action android:name="android.intent.action.MAIN" />
@@ -22,7 +22,13 @@
     </activity>
 
     <!-- Tambahkan ini -->
+    <activity android:name=".RegisterActivity" />
+    <activity android:name=".MenuActivity" />
+    <activity android:name=".PengajuanKendaraanDinasActivity" />
     <activity android:name=".PengajuanPerjalananDinasActivity" />
+    <activity android:name=".PenomeranDokumenActivity" />
+    <activity android:name=".LogistikBarangActivity" />
+
 
   </application>
 

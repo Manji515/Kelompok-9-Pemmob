@@ -19,8 +19,8 @@ public class LogistikBarangActivity extends AppCompatActivity {
         txtJumlah      = findViewById(R.id.txtTanggal);
         txtAlasan      = findViewById(R.id.txtJenis);
         txtKeterangan  = findViewById(R.id.txtPerihal);
-        btnKirim       = findViewById(R.id.btnKirim);
-        btnKembali     = findViewById(R.id.btnKembali);
+        btnKirim       = findViewById(R.id.btnDaftar);
+        btnKembali     = findViewById(R.id.btnBatal);
 
         boolean readOnly = getIntent().getBooleanExtra("MODE_READ_ONLY", false);
 
