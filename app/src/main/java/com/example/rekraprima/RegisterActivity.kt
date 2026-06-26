@@ -24,7 +24,7 @@ class RegisterActivity : AppCompatActivity() {
 
         val dbHelper = DatabaseHelper(this)
 
-        val listRole = arrayOf("Karyawan", "Manajer")
+        val listRole = arrayOf("Karyawan", "Manajer","Keuangan","Genneral Affair")
         val adapter = ArrayAdapter(this, android.R.layout.simple_spinner_item, listRole)
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
         spinnerRole.adapter = adapter

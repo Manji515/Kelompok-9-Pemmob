@@ -29,6 +29,8 @@
     <activity android:name=".PenomeranDokumenActivity" />
     <activity android:name=".LogistikBarangActivity" />
     <activity android:name=".ManajerMenuActivity" />
+    <activity android:name=".KeuanganMenuActivity" />
+    <activity android:name=".gaMenuActivity" />
 
 
   </application>

@@ -34,6 +34,8 @@ class LoginActivity : AppCompatActivity() {
                     val intent = when (userRole) {
                         "Manajer" -> Intent(this, ManajerMenuActivity::class.java)
                         "Karyawan" -> Intent(this, MenuActivity::class.java)
+                        "Keuangan" -> Intent(this, KeuanganMenuActivity::class.java)
+                        "Genneral Affair" -> Intent(this, gaMenuActivity::class.java)
                         else ->  null
                     }
 
