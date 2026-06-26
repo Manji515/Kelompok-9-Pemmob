@@ -26,6 +26,8 @@ public class MenuActivity extends AppCompatActivity {
         MaterialButton btnPenomeran  = findViewById(R.id.btnPenomeranDokumen);
         MaterialButton btnLogistik   = findViewById(R.id.btnLogistikBarang);
         MaterialButton btnKendaraan  = findViewById(R.id.btnPengajuanKendaraanDinas);
+        MaterialButton btnKeluar  = findViewById(R.id.btnLogout);
+
 
         btnPerjalanan.setOnClickListener(v -> {
             Intent intent = new Intent(this, PengajuanPerjalananDinasActivity.class);
@@ -41,6 +43,10 @@ public class MenuActivity extends AppCompatActivity {
         });
         btnPenomeran.setOnClickListener(v -> {
             Intent intent = new Intent(this, PenomeranDokumenActivity.class);
+            startActivity(intent);
+        });
+        btnKeluar.setOnClickListener(v -> {
+            Intent intent = new Intent(this, LoginActivity.class);
             startActivity(intent);
         });
         // RecyclerView daftar pengajuan

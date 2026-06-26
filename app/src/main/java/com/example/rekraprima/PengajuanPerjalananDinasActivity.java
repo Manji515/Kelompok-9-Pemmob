@@ -23,19 +23,19 @@ public class PengajuanPerjalananDinasActivity extends AppCompatActivity {
         txtKeberangkatan = findViewById(R.id.txtTanggal);
         txtKembali       = findViewById(R.id.txtJenis);
         txtAgenda        = findViewById(R.id.txtPerihal);
+        btnKirim   = findViewById(R.id.btnDaftar);
+        btnKembali = findViewById(R.id.btnBatal);
+        // SESUDAH
+        boolean readOnly    = getIntent().getBooleanExtra("MODE_READ_ONLY", false);
+        boolean modeManager = getIntent().getBooleanExtra("MODE_MANAGER", false);
 
-        // PERHATIAN: di XML kamu ID tombol Kirim = btnPenomeranDokumen
-        //            dan Kembali = btnPengajuanPerjalananDinas.
-        //            Sebaiknya ganti ID-nya di XML menjadi btnKirim & btnKembali
-        //            agar tidak membingungkan. Tapi kalau belum sempat, pakai ID lama:
-        btnKirim   = findViewById(R.id.btnDaftar);   // ganti jadi btnPenomeranDokumen kalau belum ubah XML
-        btnKembali = findViewById(R.id.btnBatal); // ganti jadi btnPengajuanPerjalananDinas kalau belum ubah XML
-
-        // Cek apakah dibuka dalam mode baca (dari daftar pengajuan)
-        boolean readOnly = getIntent().getBooleanExtra("MODE_READ_ONLY", false);
-
-        if (readOnly) {
-            tampilkanModeReadOnly();
+        if (modeManager) {
+            Pengajuan p = (Pengajuan) getIntent().getSerializableExtra("DATA_PENGAJUAN");
+            tampilkanModeReadOnly(p);
+            String id = getIntent().getStringExtra("PENGAJUAN_ID");
+            ManagerModeHelper.setup(this, btnKirim, id, p.status, null);
+        } else if (readOnly) {
+            tampilkanModeReadOnly(null); // null = ambil dari intent di dalam method
         } else {
             setupModeEdit();
         }
@@ -83,9 +83,9 @@ public class PengajuanPerjalananDinasActivity extends AppCompatActivity {
 
     // ─── Mode baca (dari daftar pengajuan) ───────────────────────────────────
 
-    private void tampilkanModeReadOnly() {
-        Pengajuan p = (Pengajuan) getIntent().getSerializableExtra("DATA_PENGAJUAN");
-        if (p == null) { finish(); return; }
+    // SESUDAH
+    private void tampilkanModeReadOnly(Pengajuan p) {
+        if (p == null) p = (Pengajuan) getIntent().getSerializableExtra("DATA_PENGAJUAN");
 
         // Isi teks
         txtTujuan.setText(p.tujuan);

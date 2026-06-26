@@ -25,14 +25,20 @@ public class PenomeranDokumenActivity extends AppCompatActivity {
         btnKirim   = findViewById(R.id.btnDaftar);
         btnKembali = findViewById(R.id.btnBatal);
 
-        boolean readOnly = getIntent().getBooleanExtra("MODE_READ_ONLY", false);
+        // SESUDAH
+        boolean readOnly    = getIntent().getBooleanExtra("MODE_READ_ONLY", false);
+        boolean modeManager = getIntent().getBooleanExtra("MODE_MANAGER", false);
 
-        if (readOnly) {
-            tampilkanModeReadOnly();
+        if (modeManager) {
+            Pengajuan p = (Pengajuan) getIntent().getSerializableExtra("DATA_PENGAJUAN");
+            tampilkanModeReadOnly(p);
+            String id = getIntent().getStringExtra("PENGAJUAN_ID");
+            ManagerModeHelper.setup(this, btnKirim, id, p.status, null);
+        } else if (readOnly) {
+            tampilkanModeReadOnly(null);
         } else {
             setupModeEdit();
         }
-
         btnKembali.setOnClickListener(v -> finish());
     }
 
@@ -75,9 +81,8 @@ public class PenomeranDokumenActivity extends AppCompatActivity {
 
     // ─── Mode baca (dari daftar pengajuan) ───────────────────────────────────
 
-    private void tampilkanModeReadOnly() {
-        Pengajuan p = (Pengajuan) getIntent().getSerializableExtra("DATA_PENGAJUAN");
-        if (p == null) { finish(); return; }
+    private void tampilkanModeReadOnly(Pengajuan p) {
+        if (p == null) p = (Pengajuan) getIntent().getSerializableExtra("DATA_PENGAJUAN");
 
         txtJudul.setText(p.tujuan);
         txtTanggal.setText(p.tanggalBerangkat);
