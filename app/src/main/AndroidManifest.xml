@@ -21,17 +21,15 @@
       </intent-filter>
     </activity>
 
-    <!-- Tambahkan ini -->
     <activity android:name=".RegisterActivity" />
     <activity android:name=".MenuActivity" />
-    <activity android:name=".PengajuanKendaraanDinasActivity" />
-    <activity android:name=".PengajuanPerjalananDinasActivity" />
     <activity android:name=".PenomeranDokumenActivity" />
+    <activity android:name=".PengajuanPerjalananDinasActivity" />
     <activity android:name=".LogistikBarangActivity" />
-    <activity android:name=".ManajerMenuActivity" />
+    <activity android:name=".PengajuanKendaraanDinasActivity" />
     <activity android:name=".KeuanganMenuActivity" />
-    <activity android:name=".gaMenuActivity" />
-
+    <activity android:name=".ManajerMenuActivity" />
+    <activity android:name=".GeneralAffairMenuActivity" />
 
   </application>
 

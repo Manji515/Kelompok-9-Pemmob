@@ -31,16 +31,23 @@ class LoginActivity : AppCompatActivity() {
                 if (userRole != null) {
                     Toast.makeText(this, "Login Berhasil sebagai $userRole!", Toast.LENGTH_SHORT).show()
 
-                    val intent = when (userRole) {
+                    val intent = when (userRole.trim()) {
                         "Manajer" -> Intent(this, ManajerMenuActivity::class.java)
                         "Karyawan" -> Intent(this, MenuActivity::class.java)
                         "Keuangan" -> Intent(this, KeuanganMenuActivity::class.java)
-                        "Genneral Affair" -> Intent(this, gaMenuActivity::class.java)
+                        "General Affair" -> Intent(this, GeneralAffairMenuActivity::class.java)
+                        "Genneral Affair" -> Intent(this, GeneralAffairMenuActivity::class.java) // Jaga-jaga kalau di database typonya dua 'n'
                         else ->  null
                     }
 
-                    startActivity(intent)
-                    finish()
+                    if (intent != null) {
+                        startActivity(intent)
+                        finish()
+                    } else {
+                        // Jika role tidak cocok
+                        Toast.makeText(this, "Gagal masuk! Menu untuk role '$userRole' belum terdaftar di sistem.", Toast.LENGTH_LONG).show()
+                    }
+
                 } else {
                     Toast.makeText(this, "Nama atau Password Salah!", Toast.LENGTH_SHORT).show()
                 }
