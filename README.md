@@ -22,3 +22,12 @@ Untuk cara cloning nya:
 * Buka CMD dan masuk ke folder yang akan menjadi tempat clone
 * Salin link repository github
 * git clone pada CMD dengan cara git clone [tempel_link]
+
+Untuk cara menjalankan aplikasi nya:
+* Registrasi terlebih dahulu dengan membuat Nama, Password, dan Role
+* Jika sudah membuat akun lalu login
+* Jika Login berhasil user akan diarahkan ke masing masing menu sesuai role
+* Role karyawan, dapat mengajukan perjalanan dinas, logistik barang, pengajuan penomeran dokumen, dan pengajuan kendaraan dinas
+* Role Manajer, dapat menyetujui atau menolak laporan dari pengajuan karyawan
+* Role Keuangan, akan menampilkan pengajuan perjalanan dinas & logistik barang yang sudah disetujui atau ditolak oleh manajer. Jika status nya disetujui, keuangan dapat memberikan anggaran
+* Role General Affair, dapat menerbitkan surat pada pengajuan yang telah diberi anggaran oleh keuangan
