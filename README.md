@@ -21,4 +21,4 @@ Len Rekaprima Semesta Operations Hub adalah aplikasi berbasis mobile yang diranc
 Untuk cara cloning nya:
 * Buka CMD dan masuk ke folder yang akan menjadi tempat clone
 * Salin link repository github
-* git clone pada cmd dengan cara git clone [tempel_link]
+* git clone pada CMD dengan cara git clone [tempel_link]
