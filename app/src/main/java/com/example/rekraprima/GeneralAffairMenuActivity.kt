@@ -73,7 +73,7 @@ class GeneralAffairMenuActivity : AppCompatActivity() {
         builder.setMessage("Masukkan Nomor Surat atau Keterangan Dokumen Pendukung:")
 
         val inputSurat = EditText(this).apply {
-            hint = "Contoh: SK-DIR/VI/2026/004"
+            hint = "Contoh: 042/LB-GA/LRS/VI/2026"
         }
         builder.setView(inputSurat)
 

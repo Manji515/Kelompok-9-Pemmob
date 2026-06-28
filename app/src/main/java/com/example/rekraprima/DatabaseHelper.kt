@@ -9,7 +9,7 @@ class DatabaseHelper(context: Context) : SQLiteOpenHelper(context, DATABASE_NAME
 
     companion object {
         private const val DATABASE_NAME = "RekraPrima.db"
-        private const val DATABASE_VERSION = 12
+        private const val DATABASE_VERSION = 14
 
         // Tabel Users
         const val TABLE_USERS = "users"
@@ -38,6 +38,7 @@ class DatabaseHelper(context: Context) : SQLiteOpenHelper(context, DATABASE_NAME
         const val COL_PERIHAL_DOKUMEN = "perihal"
         const val COL_STATUS_DOKUMEN = "status"
         const val COL_ALASAN_TOLAK_DOKUMEN = "alasan_ditolak"
+        const val COL_NOMOR_SURAT_DOKUMEN = "nomor_surat"
 
         // Tabel Logistik Barang
         const val TABLE_LOGISTIK = "logistik_barang"
@@ -66,7 +67,7 @@ class DatabaseHelper(context: Context) : SQLiteOpenHelper(context, DATABASE_NAME
 
         db?.execSQL("CREATE TABLE $TABLE_PENGAJUAN ($COL_ID_PENGAJUAN INTEGER PRIMARY KEY AUTOINCREMENT, $COL_TUJUAN TEXT, $COL_TGL_BERANGKAT TEXT, $COL_TGL_KEMBALI TEXT, $COL_AGENDA TEXT, $COL_STATUS TEXT DEFAULT 'Diproses', $COL_ALASAN_TOLAK_DINAS TEXT DEFAULT '', $COL_SURAT_DINAS TEXT DEFAULT '')")
 
-        db?.execSQL("CREATE TABLE $TABLE_DOKUMEN ($COL_ID_DOKUMEN INTEGER PRIMARY KEY AUTOINCREMENT, $COL_JUDUL_DOKUMEN TEXT, $COL_TGL_DOKUMEN TEXT, $COL_JENIS_DOKUMEN TEXT, $COL_PERIHAL_DOKUMEN TEXT, $COL_STATUS_DOKUMEN TEXT DEFAULT 'Diproses', $COL_ALASAN_TOLAK_DOKUMEN TEXT DEFAULT '')")
+        db?.execSQL("CREATE TABLE $TABLE_DOKUMEN ($COL_ID_DOKUMEN INTEGER PRIMARY KEY AUTOINCREMENT, $COL_JUDUL_DOKUMEN TEXT, $COL_TGL_DOKUMEN TEXT, $COL_JENIS_DOKUMEN TEXT, $COL_PERIHAL_DOKUMEN TEXT, $COL_STATUS_DOKUMEN TEXT DEFAULT 'Diproses', $COL_ALASAN_TOLAK_DOKUMEN TEXT DEFAULT '', $COL_NOMOR_SURAT_DOKUMEN TEXT DEFAULT '')")
 
         db?.execSQL("CREATE TABLE $TABLE_LOGISTIK ($COL_ID_LOGISTIK INTEGER PRIMARY KEY AUTOINCREMENT, $COL_NAMA_BARANG TEXT, $COL_JUMLAH_BARANG TEXT, $COL_ALASAN_LOGISTIK TEXT, $COL_KET_LOGISTIK TEXT, $COL_STATUS_LOGISTIK TEXT DEFAULT 'Diproses', $COL_ALASAN_TOLAK_LOGISTIK TEXT DEFAULT '', $COL_SURAT_LOGISTIK TEXT DEFAULT '')")
 
@@ -87,12 +88,11 @@ class DatabaseHelper(context: Context) : SQLiteOpenHelper(context, DATABASE_NAME
         val list = ArrayList<PengajuanModel>()
         val db = this.readableDatabase
 
-        // Menggabungkan data
         val query = "SELECT $COL_ID_PENGAJUAN AS id, $COL_TUJUAN AS judul, $COL_TGL_BERANGKAT AS info_tgl, $COL_TGL_KEMBALI AS info_opsional, ('Perjalanan Dinas|' || $COL_AGENDA || '###' || $COL_ALASAN_TOLAK_DINAS || '@@@' || $COL_SURAT_DINAS) AS gabung_data, $COL_STATUS AS status_proses FROM $TABLE_PENGAJUAN " +
                 "UNION ALL " +
                 "SELECT $COL_ID_LOGISTIK AS id, $COL_NAMA_BARANG AS judul, $COL_JUMLAH_BARANG AS info_tgl, $COL_ALASAN_LOGISTIK AS info_opsional, ('Logistik Barang|' || $COL_KET_LOGISTIK || '###' || $COL_ALASAN_TOLAK_LOGISTIK || '@@@' || $COL_SURAT_LOGISTIK) AS gabung_data, $COL_STATUS_LOGISTIK AS status_proses FROM $TABLE_LOGISTIK " +
                 "UNION ALL " +
-                "SELECT $COL_ID_DOKUMEN AS id, $COL_JUDUL_DOKUMEN AS judul, $COL_TGL_DOKUMEN AS info_tgl, $COL_JENIS_DOKUMEN AS info_opsional, ('Penomoran Dokumen|' || $COL_PERIHAL_DOKUMEN || '###' || $COL_ALASAN_TOLAK_DOKUMEN || '@@@' || '') AS gabung_data, $COL_STATUS_DOKUMEN AS status_proses FROM $TABLE_DOKUMEN " +
+                "SELECT $COL_ID_DOKUMEN AS id, $COL_JUDUL_DOKUMEN AS judul, $COL_TGL_DOKUMEN AS info_tgl, $COL_JENIS_DOKUMEN AS info_opsional, ('Penomoran Dokumen|' || $COL_PERIHAL_DOKUMEN || '###' || $COL_ALASAN_TOLAK_DOKUMEN || '@@@' || $COL_NOMOR_SURAT_DOKUMEN) AS gabung_data, $COL_STATUS_DOKUMEN AS status_proses FROM $TABLE_DOKUMEN " +
                 "UNION ALL " +
                 "SELECT $COL_ID_KENDARAAN AS id, $COL_TUJUAN_KENDARAAN AS judul, $COL_TGL_KENDARAAN AS info_tgl, $COL_JENIS_KENDARAAN AS info_opsional, ('Pengajuan Kendaraan Dinas|' || $COL_AGENDA_KENDARAAN || '###' || $COL_ALASAN_TOLAK_KENDARAAN || '@@@' || '') AS gabung_data, $COL_STATUS_KENDARAAN AS status_proses FROM $TABLE_KENDARAAN " +
                 "ORDER BY id DESC"
@@ -107,7 +107,6 @@ class DatabaseHelper(context: Context) : SQLiteOpenHelper(context, DATABASE_NAME
         return list
     }
 
-    // Mengambil data yang dilihat oleh bagian keuangan
     fun getKeuanganPengajuan(): ArrayList<PengajuanModel> {
         val list = ArrayList<PengajuanModel>()
         val db = this.readableDatabase
@@ -123,7 +122,6 @@ class DatabaseHelper(context: Context) : SQLiteOpenHelper(context, DATABASE_NAME
         return list
     }
 
-    // Mengambil data khusus general affair
     fun getGAPengajuan(): ArrayList<PengajuanModel> {
         val list = ArrayList<PengajuanModel>()
         val db = this.readableDatabase
@@ -139,10 +137,15 @@ class DatabaseHelper(context: Context) : SQLiteOpenHelper(context, DATABASE_NAME
         return list
     }
 
-    // Mengubah status pengajuan
-    fun updateStatusDokumen(id: Int, s: String, a: String = ""): Boolean {
-        return this.writableDatabase.update(TABLE_DOKUMEN, ContentValues().apply { put(COL_STATUS_DOKUMEN, s); put(COL_ALASAN_TOLAK_DOKUMEN, a) }, "$COL_ID_DOKUMEN = ?", arrayOf(id.toString())) > 0
+    fun updateStatusDokumen(id: Int, s: String, alasanTolak: String = "", noSurat: String = ""): Boolean {
+        val cv = ContentValues().apply {
+            put(COL_STATUS_DOKUMEN, s)
+            put(COL_ALASAN_TOLAK_DOKUMEN, alasanTolak)
+            put(COL_NOMOR_SURAT_DOKUMEN, noSurat)
+        }
+        return this.writableDatabase.update(TABLE_DOKUMEN, cv, "$COL_ID_DOKUMEN = ?", arrayOf(id.toString())) > 0
     }
+
     fun updateStatusKendaraan(id: Int, s: String, a: String = ""): Boolean {
         return this.writableDatabase.update(TABLE_KENDARAAN, ContentValues().apply { put(COL_STATUS_KENDARAAN, s); put(COL_ALASAN_TOLAK_KENDARAAN, a) }, "$COL_ID_KENDARAAN = ?", arrayOf(id.toString())) > 0
     }

@@ -76,7 +76,11 @@ class PengajuanAdapter(
 
         // Tampilkan alasan penolakan atau surat diterbitkan jika ada datanya
         if (alasanTolakTerbaca.isNotEmpty()) {
-            strDetailBawah += "\n❌ Alasan Tolak: $alasanTolakTerbaca"
+            if (kategoriSekarang.trim().lowercase() == "penomoran dokumen" && item.status.lowercase().trim() == "surat telah diterbitkan") {
+                strDetailBawah += "\n✉️ Nomor Resmi: $alasanTolakTerbaca"
+            } else {
+                strDetailBawah += "\n❌ Alasan Tolak: $alasanTolakTerbaca"
+            }
         }
         if (nomorSuratTerbit.isNotEmpty()) {
             strDetailBawah += "\n✉️ Dokumen Surat: $nomorSuratTerbit"
