@@ -8,7 +8,7 @@ Len Rekaprima Semesta Operations Hub adalah aplikasi berbasis mobile yang diranc
 
 # 👥Daftar Anggota kelompok
 * **Firman Satrio Aji** - 24552011022 - FrontEnd Developer
-* **Maulana Yusuf Syawaludin** - 24552011072 - Backend Developer
+* **Maulana Yusuf Syawaludin** - 24552011072 - BackEnd Developer
 * **Dwitama**
 
 # 🔗Link Video Penjelasan
@@ -22,6 +22,14 @@ Cara cloning:
 * Buka CMD dan masuk ke folder yang akan menjadi tempat clone
 * Salin link repository github
 * git clone pada CMD dengan cara git clone [tempel_link]
+* Pada CMD ketik git checkout patch-0, karena file berada di brach patch-0
+Cara menjalankan di andorid studio:
+* Pada android studio klik file
+* Lalu open project
+* Pilih folder yang tadi menjadi tempat cloning
+* Lalu tunggu hingga gradle selesai
+* Jika gradle sudah selesai running aplikasi dengan cara aktifkan emulator
+* lalu klik tombol play hijau di bagian atas emulator
 
 Cara mengguanakan aplikasi:
 * Registrasi terlebih dahulu dengan membuat Nama, Password, dan Role
