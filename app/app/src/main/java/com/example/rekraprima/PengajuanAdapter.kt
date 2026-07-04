@@ -1,10 +1,15 @@
 package com.example.rekraprima
 
+import android.content.Context
 import android.graphics.Color
+import android.text.Spannable
+import android.text.SpannableStringBuilder
+import android.text.style.ImageSpan
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
 
 class PengajuanAdapter(
@@ -27,6 +32,7 @@ class PengajuanAdapter(
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val item = list[position]
+        val context = holder.itemView.context
 
         val bagianKategori = item.agenda.split("|")
         var kategoriSekarang = "AJUAN"
@@ -48,46 +54,58 @@ class PengajuanAdapter(
         val deskripsiKomponenAsli = bagianAlasan[0]
         val alasanTolakTerbaca = if (bagianAlasan.size == 2) bagianAlasan[1] else ""
 
-        var strDetailTengah = ""
-        var strDetailBawah = ""
+        val detailTengahBuilder = SpannableStringBuilder()
+        val detailBawahBuilder = SpannableStringBuilder()
 
         when (kategoriSekarang.trim().lowercase()) {
             "perjalanan dinas" -> {
                 holder.tvTujuan.text = "Tujuan Dinas: ${item.tujuan}"
-                strDetailTengah = "📅 Berangkat: ${item.tglBerangkat}\n📅 Kembali: ${item.tglKembali}"
-                strDetailBawah = "📋 Agenda: $deskripsiKomponenAsli"
+
+                detailTengahBuilder.append(createSpannedText(context, R.drawable.ic_calendar, "Berangkat: ${item.tglBerangkat}\n"))
+                detailTengahBuilder.append(createSpannedText(context, R.drawable.ic_calendar, "Kembali: ${item.tglKembali}"))
+
+                detailBawahBuilder.append(createSpannedText(context, R.drawable.ic_assignment, "Agenda: $deskripsiKomponenAsli"))
             }
             "logistik barang" -> {
                 holder.tvTujuan.text = "Nama Barang: ${item.tujuan}"
-                strDetailTengah = "🔢 Jumlah: ${item.tglBerangkat} Pcs\n💡 Alasan Kebutuhan: ${item.tglKembali}"
-                strDetailBawah = "📋 Keterangan: $deskripsiKomponenAsli"
+
+                detailTengahBuilder.append(createSpannedText(context, R.drawable.ic_numbers, "Jumlah: ${item.tglBerangkat} Pcs\n"))
+                detailTengahBuilder.append(createSpannedText(context, R.drawable.ic_lightbulb, "Alasan Kebutuhan: ${item.tglKembali}"))
+
+                detailBawahBuilder.append(createSpannedText(context, R.drawable.ic_assignment, "Keterangan: $deskripsiKomponenAsli"))
             }
             "penomoran dokumen" -> {
                 holder.tvTujuan.text = "Judul Dokumen: ${item.tujuan}"
-                strDetailTengah = "📅 Tanggal: ${item.tglBerangkat}\n🗂️ Jenis Dokumen: ${item.tglKembali}"
-                strDetailBawah = "📋 Perihal: $deskripsiKomponenAsli"
+
+                detailTengahBuilder.append(createSpannedText(context, R.drawable.ic_calendar, "Tanggal: ${item.tglBerangkat}\n"))
+                detailTengahBuilder.append(createSpannedText(context, R.drawable.ic_folder, "Jenis Dokumen: ${item.tglKembali}"))
+
+                detailBawahBuilder.append(createSpannedText(context, R.drawable.ic_assignment, "Perihal: $deskripsiKomponenAsli"))
             }
             "pengajuan kendaraan dinas" -> {
                 holder.tvTujuan.text = "Tujuan Berangkat: ${item.tujuan}"
-                strDetailTengah = "📅 Berangkat: ${item.tglBerangkat}\n🚗 Jenis Kendaraan: ${item.tglKembali}"
-                strDetailBawah = "📋 Agenda: $deskripsiKomponenAsli"
+
+                detailTengahBuilder.append(createSpannedText(context, R.drawable.ic_calendar, "Berangkat: ${item.tglBerangkat}\n"))
+                detailTengahBuilder.append(createSpannedText(context, R.drawable.ic_car, "Jenis Kendaraan: ${item.tglKembali}"))
+
+                detailBawahBuilder.append(createSpannedText(context, R.drawable.ic_assignment, "Agenda: $deskripsiKomponenAsli"))
             }
         }
 
-        // Tampilkan alasan penolakan atau surat diterbitkan jika ada datanya
+        // Menampilkan alasan penolakan atau surat diterbitkan jika ada
         if (alasanTolakTerbaca.isNotEmpty()) {
             if (kategoriSekarang.trim().lowercase() == "penomoran dokumen" && item.status.lowercase().trim() == "surat telah diterbitkan") {
-                strDetailBawah += "\n✉️ Nomor Resmi: $alasanTolakTerbaca"
+                detailBawahBuilder.append("\n").append(createSpannedText(context, R.drawable.ic_mail, "Nomor Resmi: $alasanTolakTerbaca"))
             } else {
-                strDetailBawah += "\n❌ Alasan Tolak: $alasanTolakTerbaca"
+                detailBawahBuilder.append("\n").append(createSpannedText(context, R.drawable.ic_cancel, "Alasan Tolak: $alasanTolakTerbaca"))
             }
         }
         if (nomorSuratTerbit.isNotEmpty()) {
-            strDetailBawah += "\n✉️ Dokumen Surat: $nomorSuratTerbit"
+            detailBawahBuilder.append("\n").append(createSpannedText(context, R.drawable.ic_mail, "Dokumen Surat: $nomorSuratTerbit"))
         }
 
-        holder.tvTanggal.text = strDetailTengah
-        holder.tvAgenda.text = strDetailBawah
+        holder.tvTanggal.text = detailTengahBuilder
+        holder.tvAgenda.text = detailBawahBuilder
         holder.tvStatus.text = item.status
 
         // Warna Status
@@ -123,4 +141,20 @@ class PengajuanAdapter(
     }
 
     override fun getItemCount(): Int = list.size
+
+    private fun createSpannedText(context: Context, drawableRes: Int, text: String): SpannableStringBuilder {
+        val builder = SpannableStringBuilder("   $text")
+        val drawable = ContextCompat.getDrawable(context, drawableRes)
+
+        drawable?.let {
+            // Mengonversi ukuran icon ke 16dp
+            val metrics = context.resources.displayMetrics
+            val size = (16 * (metrics.densityDpi.toFloat() / 160f)).toInt()
+            it.setBounds(0, 0, size, size)
+
+            val imageSpan = ImageSpan(it, ImageSpan.ALIGN_BOTTOM)
+            builder.setSpan(imageSpan, 1, 2, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE)
+        }
+        return builder
+    }
 }
