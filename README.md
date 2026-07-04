@@ -7,8 +7,8 @@ Len Rekaprima Semesta Operations Hub adalah aplikasi berbasis mobile yang diranc
 * **Penomoran Dokumen & Kendaraan Dinas:** Sistem pengajuan langsung yang menjembatani kebutuhan karyawan dengan validasi instan (ACC/Tolak) oleh Manajer.
 
 # 👥Daftar Anggota kelompok
-* **Firman Satrio Aji** - 24552011022 - FrontEnd Developer
-* **Maulana Yusuf Syawaludin** - 24552011072 - BackEnd Developer
+* **Firman Satrio Aji** - 24552011022 - Frontend Developer
+* **Maulana Yusuf Syawaludin** - 24552011072 - Backend Developer
 * **Dwitama**
 
 # 🔗Link Video Penjelasan
