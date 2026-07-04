@@ -15,7 +15,7 @@ Len Rekaprima Semesta Operations Hub adalah aplikasi berbasis mobile yang diranc
 [Video Penjelasan](https://www.google.com)
 
 # 📱Screenshot aplikasi
-![image alt]()
+![image alt](https://github.com/Manji515/Kelompok-9-Pemmob/blob/19fc2189012df9bf2a3ff55a7844a29c4bb69aa4/mockup.png)
 
 # ♣️Cara menjalankan/Cloning proyek
 Cara cloning:
