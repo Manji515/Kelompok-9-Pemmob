@@ -14,8 +14,8 @@ class LoginActivity : AppCompatActivity() {
         setContentView(R.layout.activity_login)
         val etNameLogin = findViewById<TextInputEditText>(R.id.etNameLogin)
         val etPasswordLogin = findViewById<TextInputEditText>(R.id.etPasswordLogin)
-        val btnRegisterIntent = findViewById<MaterialButton>(R.id.btnBatal) // Tombol Register
-        val btnLogin = findViewById<MaterialButton>(R.id.btnDaftar) // Tombol Login
+        val btnRegisterIntent = findViewById<MaterialButton>(R.id.btnBatal)
+        val btnLogin = findViewById<MaterialButton>(R.id.btnDaftar)
 
         val dbHelper = DatabaseHelper(this)
 
@@ -35,8 +35,7 @@ class LoginActivity : AppCompatActivity() {
                         "Manajer" -> Intent(this, ManajerMenuActivity::class.java)
                         "Karyawan" -> Intent(this, MenuActivity::class.java)
                         "Keuangan" -> Intent(this, KeuanganMenuActivity::class.java)
-                        "General Affair" -> Intent(this, GeneralAffairMenuActivity::class.java)
-                        "Genneral Affair" -> Intent(this, GeneralAffairMenuActivity::class.java) // Jaga-jaga kalau di database typonya dua 'n'
+                        "Genneral Affair" -> Intent(this, GeneralAffairMenuActivity::class.java)
                         else ->  null
                     }
 

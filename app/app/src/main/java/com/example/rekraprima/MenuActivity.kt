@@ -16,7 +16,6 @@ class MenuActivity : AppCompatActivity() {
     private lateinit var adapter: PengajuanAdapter
     private var listPengajuan = ArrayList<PengajuanModel>()
 
-    // Deklarasi komponen UI secara manual
     private lateinit var rvDaftarPengajuan: RecyclerView
     private lateinit var tvKosong: TextView
 
