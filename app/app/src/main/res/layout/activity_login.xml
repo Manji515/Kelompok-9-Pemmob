@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res-auto"
+  android:layout_width="match_parent"
+  android:layout_height="match_parent"
+  android:fillViewport="true"
+  android:background="@color/pastel_blue">
+
+  <LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <TextView
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_marginTop="40dp"
+      android:layout_marginBottom="40dp"
+      android:fontFamily="@font/inter_extrabold"
+      android:gravity="center"
+      android:text="LOGIN"
+      android:textColor="@color/dark_green"
+      android:textSize="24sp"
+      android:textStyle="bold" />
+
+    <LinearLayout
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      android:background="@drawable/curve_bg"
+      android:orientation="vertical"
+      android:padding="24dp"
+      android:elevation="4dp">
+
+      <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/inter"
+        android:layout_marginTop="12dp"
+        android:hint="Input Nama">
+
+        <com.google.android.material.textfield.TextInputEditText
+          android:id="@+id/etNameLogin"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:fontFamily="@font/inter"
+          android:inputType="textPersonName"
+          style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"/>
+      </com.google.android.material.textfield.TextInputLayout>
+
+      <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:hint="Input Password"
+        app:passwordToggleEnabled="true">
+
+        <com.google.android.material.textfield.TextInputEditText
+          android:id="@+id/etPasswordLogin"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:fontFamily="@font/inter"
+          android:inputType="textPassword"
+          style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"/>
+      </com.google.android.material.textfield.TextInputLayout>
+
+      <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="36dp"
+        android:layout_marginBottom="24dp"
+        android:orientation="horizontal">
+
+        <com.google.android.material.button.MaterialButton
+          android:id="@+id/btnBatal"
+          android:layout_width="0dp"
+          android:layout_height="52dp"
+          android:layout_weight="1"
+          android:backgroundTint="@color/powder_blue"
+          android:text="Register"
+          android:textColor="@color/dark_green"
+          android:fontFamily="@font/inter_semibold"
+          app:cornerRadius="16dp"
+          app:strokeColor="@color/dark_green"
+          app:strokeWidth="2dp" />
+
+        <Space
+          android:layout_width="12dp"
+          android:layout_height="1dp" />
+
+        <com.google.android.material.button.MaterialButton
+          android:id="@+id/btnDaftar"
+          android:layout_width="0dp"
+          android:layout_height="52dp"
+          android:layout_weight="1"
+          android:backgroundTint="@color/dark_green"
+          android:fontFamily="@font/inter_semibold"
+          android:text="Login"
+          android:textAllCaps="false"
+          android:textColor="@color/white"
+          app:cornerRadius="16dp" />
+      </LinearLayout>
+
+    </LinearLayout>
+  </LinearLayout>
+</ScrollView>
