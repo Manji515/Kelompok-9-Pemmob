@@ -9,10 +9,10 @@ Len Rekaprima Semesta Operations Hub adalah aplikasi berbasis mobile yang diranc
 # 👥Daftar Anggota kelompok
 * **Firman Satrio Aji** - 24552011022 - Frontend Developer
 * **Maulana Yusuf Syawaludin** - 24552011072 - Backend Developer
-* **Dwitama**
+* **Dwitama Andhika Wijaya** - 24552011006
 
 # 🔗Link Video Penjelasan
-[Video Penjelasan](https://www.google.com)
+[Video Penjelasan](https://youtu.be/ZmnIixYFb68)
 
 # 📱Screenshot aplikasi
 ![image alt](https://github.com/Manji515/Kelompok-9-Pemmob/blob/19fc2189012df9bf2a3ff55a7844a29c4bb69aa4/mockup.png)
