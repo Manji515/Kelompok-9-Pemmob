@@ -31,7 +31,7 @@ Cara cloning:
 - Salin link repository github
 - git clone pada CMD dengan cara git clone [tempel_link]
 - lalu CD nama project
-- Pada CMD ketik git checkout patch-0, karena file berada di branch patch-0
+- Pada CMD ketik git checkout main, karena file berada di branch main
   Cara menjalankan di andorid studio:
 - Pada android studio klik file
 - Lalu open project
